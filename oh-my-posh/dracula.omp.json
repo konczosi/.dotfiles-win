@@ -8,7 +8,7 @@
           "background": "#d3d7cf",
           "foreground": "#000000",
           "style": "diamond",
-          "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}}",
+          "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}} ",
           "type": "os"
         },
         {
@@ -39,6 +39,14 @@
           "type": "path"
         },
         {
+          "type": "python",
+          "style": "powerline",
+          "powerline_symbol": "\ue0b0",
+          "foreground": "#f8f8f2",
+          "background": "#906cff",
+          "template": "  {{ .Full }} "
+        },
+        {
           "background": "#ffb86c",
           "foreground": "#f8f8f2",
           "powerline_symbol": "\ue0b0",
@@ -53,18 +61,32 @@
           "type": "git"
         },
         {
-          "foreground": "#f1184c",
+          "foreground": "#ff5555",
           "style": "plain",
           "template": " \udb81\udf34",
           "type": "text"
         }
       ],
       "type": "prompt"
+    },
+    {
+      "alignment": "right",
+      "segments": [
+        {
+          "type": "python",
+          "style": "powerline",
+          "powerline_symbol": "\ue0b0",
+          "foreground": "#50fa7b",
+          "background": "#282a36",
+          "template": "({{.Venv}})"
+        }
+      ],
+      "type": "rprompt"
     }
   ],
   "transient_prompt": {
     "background": "transparent",
-    "foreground": "#ffea00",
+    "foreground": "#f1fa8c",
     "template": "\udb85\udfa9 "
   },
   "final_space": true,
