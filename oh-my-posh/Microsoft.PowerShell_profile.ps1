@@ -2,6 +2,8 @@ oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/dracula.omp.json"| Invoke-E
 
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
 
+$env:VIRTUAL_ENV_DISABLE_PROMPT = 1
+
 Import-Module PSReadLine
 
 Set-PSReadLineOption -PredictionSource History
