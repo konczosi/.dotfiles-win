@@ -163,7 +163,7 @@
     "transient_prompt": {
         "background": "transparent",
         "foreground": "#f1fa8c",
-        "template": "\udb85\udfa9"
+        "template": "\udb85\udfa9 "
     },
   "final_space": true,
   "version": 2
