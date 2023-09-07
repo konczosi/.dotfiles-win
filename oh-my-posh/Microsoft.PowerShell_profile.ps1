@@ -12,9 +12,10 @@ Set-PSReadLineKeyHandler -Chord "Ctrl+RightArrow" -Function ForwardWord
 Set-PSReadLineKeyHandler -Chord "Ctrl+LeftArrow" -Function BackwardWord
 
 Set-Alias cl "clear"
+Set-Alias which get-command
 
-function cdw { set-location "D:\Devel\PPT\" }
-function cdd { set-location "D:\Devel\" }
+function cdw { set-location "current workdir" }
+function cdd { set-location "devel dir" }
 
 $env:VIRTUAL_ENV_DISABLE_PROMPT = 1
 
