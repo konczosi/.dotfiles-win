@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
-
+  "console_title_template": "{{.Folder}}{{if .Root}} :: root{{end}} :: {{.Shell}}",
   "blocks": [
     {
       "alignment": "left",
@@ -24,7 +24,7 @@
           "foreground": "#100d13",
           "powerline_symbol": "\ue0b0",
           "style": "powerline",
-          "template": " \uf0e7 ",
+          "template": " \udb85\udc0b ",
           "type": "root"
         },
         {
@@ -39,12 +39,12 @@
           "type": "path"
         },
         {
+          "background": "#fc78c5",
+          "foreground": "#100d13",
           "type": "python",
           "style": "powerline",
           "powerline_symbol": "\ue0b0",
-          "foreground": "#f8f8f2",
-          "background": "#906cff",
-          "template": "  {{ .Full }} "
+          "template": " ({{ .Venv }}) \ue73c {{ .Full }} "
         },
         {
           "background": "#5bf78d",
@@ -107,7 +107,7 @@
           "invert_powerline" : true,
           "foreground": "#ebeced",
           "background": "#6087af",
-          "template": " \ue266 {{ round .PhysicalPercentUsed .Precision }}% ",
+          "template": " \ue266 {{ round .PhysicalPercentUsed .Precision }}%",
           "properties": {
             "precision": 2
           },
@@ -125,18 +125,17 @@
             "{{if eq \"Discharging\" .State.String}}#6087af{{end}}",
             "{{if eq \"Full\" .State.String}}#6087af{{end}}"
           ],
-          "template": " {{ if not .Error }}{{.Icon}}{{.Percentage}}{{ end }}",
+          "template": " {{ if not .Error }}{{.Icon}} {{.Percentage}}{{ end }}",
           "properties": {
-            "discharging_icon": "",
-            "charging_icon": "",
-            "charged_icon": ""
+            "discharging_icon": "\udb80\udc83",
+            "charging_icon": "\udb80\udc84",
+            "charged_icon": "\udb84\ude11"
           }
         },
         {
           "type": "time",
           "style": "diamond",
           "trailing_diamond": "\ue0b4",
-          "invert_powerline" : true,
           "foreground": "#ebeced",
           "background": "#6087af",
           "properties": {
