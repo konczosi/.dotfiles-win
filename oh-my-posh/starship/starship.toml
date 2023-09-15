@@ -1,0 +1,59 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Enable the blank line at the start of the prompt
+add_newline = true
+
+# Left prompt
+# color bg of terminal #282A36
+format ="""
+[\ue0b6](fg:#6087af)\
+$os\
+[\ue0b0](fg:#6087af bg:#caa9fa)\
+$directory\
+[\ue0b0](fg:#caa9fa bg:#50FA7B)\
+$git_branch\
+$git_status\
+[\ue0b0](fg:#50FA7B bg:#FF79C6)\
+$python\
+[\ue0b0](fg:#FF79C6 bg:#6087af)\
+$time\
+[\ue0b0](fg:#6087af)\
+\n$character"""
+
+# os
+[os]
+format = "[$symbol]($style)"
+style = "fg:#eeeeee bg:#6087af"
+disabled = false
+[os.symbols]
+Windows = " \ue62a "
+Arch = " \uf303 "
+
+# directory
+[directory]
+format = "[ \uf07c $path ]($style)"
+style = "fg:#100d13 bg:#caa9fa"
+truncation_length = 2
+truncation_symbol = "\u2025/"
+read_only = "\uf023"
+
+[git_branch]
+symbol = ""
+style = "bg:#50FA7B"
+format = "[[ $symbol $branch ](fg:#100d13 bg:#50FA7B)]($style)"
+
+[git_status]
+style = ""
+format = "[[($all_status$ahead_behind)](fg:#100d13 bg:#50FA7B)]($style)"
+
+[python]
+symbol = "\ue73c"
+style = "fg:#100d13 bg:#FF79C6"
+format = "[($symbol $version $virtualenv)]($style)"
+
+[time]
+disabled = false
+time_format = "%R"
+style = "fg:#eeeeee bg:#6087af"
+format = '[  $time ]($style)'
