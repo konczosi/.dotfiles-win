@@ -5,9 +5,8 @@
 add_newline = true
 
 # Left prompt
-# color bg of terminal #282A36
 format ="""
-[\ue0b6](fg:#6087af)\
+[╭─](fg:#6087af)\
 $os\
 [\ue0b0](fg:#6087af bg:#caa9fa)\
 $directory\
@@ -19,18 +18,23 @@ $python\
 [\ue0b0](fg:#FF79C6 bg:#6087af)\
 $time\
 [\ue0b0](fg:#6087af)\
-\n$character"""
+\n\
+[╰─ ](fg:#6087af)\
+"""
 
-# os
+[character]
+error_symbol = "[λ](bold #ff5555)"
+success_symbol = "[λ](bold #50fa7b)"
+
 [os]
 format = "[$symbol]($style)"
 style = "fg:#eeeeee bg:#6087af"
 disabled = false
+
 [os.symbols]
 Windows = " \ue62a "
 Arch = " \uf303 "
 
-# directory
 [directory]
 format = "[ \uf07c $path ]($style)"
 style = "fg:#100d13 bg:#caa9fa"
