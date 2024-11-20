@@ -1,2 +1,2 @@
 # .dotfiles
-Repo for dotfiles
+Windows config files
